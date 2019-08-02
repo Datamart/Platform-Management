@@ -1,0 +1,107 @@
+<!--#include virtual="../config.html"-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<title>Platform Management</title>
+<link href="../style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper">
+  <div id="body">
+    <script src="../includes/header.js" async></script>
+    <div id="container">
+    <script src="../includes/sidebar.js" async></script>
+
+
+<section id="main">
+  <header class="top-header clr">
+    <h1><span class="icon dashg-ico"></span>Dashboard</h1>
+    <div class="right-menu"><span class="icon date-ico"></span><span id="date-picker"></span></div>
+  </header>
+  <div class="top-panel clr">
+    <div class="cell1">
+      <div class="w-panel">
+        <div class="w-image"><img src="../images/CPU.png" alt="CPU"/></div>
+        <div class="w-text"><em data-min="31" data-max="45">33</em> of 100%<span>System load</span></div>
+      </div>
+    </div>
+    <div class="cell1">
+      <div class="w-panel">
+        <div class="w-image"><img src="../images/memory.png" alt="Memory load"/></div>
+        <div class="w-text"><em data-min="5732" data-max="5932">5,732</em> GB<span>Storage</span></div>
+      </div>
+    </div>
+    <div class="cell1">
+      <div class="w-panel">
+        <div class="w-image"><img style="margin-top: 5px;" src="../images/disk.png" alt="Disk space"/></div>
+        <div class="w-text"><em data-min="31" data-max="45">33</em>%<span>Transaction</span></div>
+      </div>
+    </div>
+    <div class="cell1">
+      <div class="b-panel">
+        <div id="geo-chart-container" style="height:190px"></div>
+        <div class="b-text">Datacenters map</div>
+      </div>
+    </div>
+    <div class="cell2">
+      <div class="b-panel">
+        <div class="clr b-pad" style="padding:10px 0">
+          <div class="cell1" id="chart-container-1" style="height:170px"></div>
+          <div class="cell1" id="chart-container-2" style="height:170px"></div>
+          <div class="cell1" id="chart-container-3" style="height:170px"></div>
+        </div>
+        <div class="b-text clr">
+          <div class="cell1">Price per tenant</div>
+          <div class="cell1">Storage</div>
+          <div class="cell1">System load per tenant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tabview-panel">
+    <div class="table-panel">
+      <script src="../includes/datagrid.js" async></script>
+    </div>
+    <a href="../reports/" class="r-link">view full report</a>
+  </div>
+</section>
+
+<script src="https://greylock.js.org/greylock.js"></script>
+<script><!--
+(new charts.DonutChart('chart-container-1')).draw([
+  ['Tenant 1', 'Tenant 2', 'Tenant 3'],
+  [100, 250, 400]
+]);
+(new charts.DonutChart('chart-container-2')).draw([
+  ['Storage 1', 'Storage 2', 'Storage 3'],
+  [2050, 4600, 1200]
+]);
+(new charts.DonutChart('chart-container-3')).draw([
+  ['Apache', 'MySQL', 'Tomcat', 'Other'],
+  [30, 45, 10, 15]
+]);
+(new charts.GeoChart('geo-chart-container')).draw([
+  ['Country', 'Requests'],
+  ['Germany', 200],
+  ['USA',     800],
+  ['Brazil',  400],
+  ['Canada',  500],
+  ['France',  600],
+  ['Russia',  300]
+], {'rgb': {'red': 35, 'green': 76, 'blue': 119}});
+//-->
+</script>
+
+      </div><!--/ id="container" -->
+    </div><!--/ id="body" -->
+  </div><!--/ id="wrapper" -->
+
+
+<script src="../includes/footer.js" async></script>
+<script src="https://www.google-analytics.com/analytics.js"></script>
+<script>ga('create','UA-5065160-11','auto'),ga('send','pageview');</script>
+<script src="https://komito.net/komito.js" async></script>
+</body>
+</html>
